@@ -31,4 +31,21 @@ class Restaurant
         return total_rent
     end
 
+    def employees
+        self.locations.map do |location|
+            locatin.employees
+        end.flatten
+    end
+
+    def total_pay
+        total = 0
+        self.locations.each do |location|
+            total += location.total_pay
+        end
+        return total
+    end
+
+    def total_expenses
+        self.total_rent + self.total_pay
+    end
 end
